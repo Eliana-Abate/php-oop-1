@@ -19,7 +19,8 @@ class Movies
     }
 }
 
-$class = new Movies($_title, $_genre,  $_description, $_director, $_year);
+
+$movies_list = [];
 
 // Istanze 
 
@@ -29,6 +30,10 @@ $movie2= new Movies ('The Truman Show', 'Comedy, dramatic', "The Truman Show is 
 
 $movie3 = new Movies ('Ghost', 'Thriller, fantasy, romantic', "Ghost is a 1990 American romantic fantasy thriller film directed by Jerry Zucker, written by Bruce Joel Rubin, and starring Patrick Swayze, Demi Moore, Whoopi Goldberg, Tony Goldwyn, Vincent Schiavelli and Rick Aviles. The plot centers on Sam Wheat (Swayze), a murdered banker whose ghost sets out to save his girlfriend, Molly Jensen (Moore) from the person who killed him through the help of a psychic Oda Mae Brown (Goldberg).", 'Jerry Zucker','1990');
 
+
+$movies_list[] = $movie1;
+$movies_list[] = $movie2;
+$movies_list[] = $movie3;
 ?>
 
 
@@ -46,9 +51,15 @@ $movie3 = new Movies ('Ghost', 'Thriller, fantasy, romantic', "Ghost is a 1990 A
     </header> 
 
     <main>
-        <?php foreach ($class as $movie => $value) : ?>
+        <?php foreach ($movies_list as $movie) : ?>
             
-            <h3><?php echo $movie[$_title]?></h3>
+            <h3><?php echo $movie->title?></h3>
+            <p>Genre: <?php echo $movie->genre?></p>
+            <p>Description: <?php echo $movie->genre?></p>
+            <p>Directed by: <?php echo $movie->director?></p>
+            <p>Year: <?php echo $movie->year?></p>
+
+            <br>
 
         <?php endforeach ?>
 
