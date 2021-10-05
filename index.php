@@ -61,6 +61,7 @@ $movies_list[] = $movie4;
 <body>
     <header>
         <h1> '80s - '90s Movies</h1>
+        <hr>
     </header> 
 
     <main>
