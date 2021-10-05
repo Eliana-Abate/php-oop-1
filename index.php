@@ -17,6 +17,19 @@ class Movies
         $this->director = $_director;
         $this->year = $_year;
     }
+
+    public function getMoviesBeforeYear2000($movie)
+    {
+        $array = [];
+        $movie = new Movies ($title, $genre, $description, $director, $year)
+
+        if ($movie->year >= 1980 && $movie->year <= 1999) {
+
+            return $array[] = $movie;
+
+        }
+    
+    }
 }
 
 
@@ -30,10 +43,16 @@ $movie2= new Movies ('The Truman Show', 'Comedy, dramatic', "The Truman Show is 
 
 $movie3 = new Movies ('Ghost', 'Thriller, fantasy, romantic', "Ghost is a 1990 American romantic fantasy thriller film directed by Jerry Zucker, written by Bruce Joel Rubin, and starring Patrick Swayze, Demi Moore, Whoopi Goldberg, Tony Goldwyn, Vincent Schiavelli and Rick Aviles. The plot centers on Sam Wheat (Swayze), a murdered banker whose ghost sets out to save his girlfriend, Molly Jensen (Moore) from the person who killed him through the help of a psychic Oda Mae Brown (Goldberg).", 'Jerry Zucker','1990');
 
+$movie4 = new Movies ('Batman Begins', 'Action, thriller, fantasy', "Batman Begins is a 2005 superhero film directed by Christopher Nolan and written by Nolan and David S. Goyer. Based on the DC Comics character Batman, it stars Christian Bale as Bruce Wayne / Batman, with Michael Caine, Liam Neeson, Katie Holmes, Gary Oldman, Cillian Murphy, Tom Wilkinson, Rutger Hauer, Ken Watanabe, and Morgan Freeman in supporting roles. The film reboots the Batman film series, telling the origin story of Bruce Wayne from the death of his parents to his journey to become Batman and his fight to stop Ra's al Ghul and the Scarecrow from plunging Gotham City into chaos.", 'Christopher Nolan', '2005');
 
-$movies_list[] = $movie1;
-$movies_list[] = $movie2;
-$movies_list[] = $movie3;
+
+
+
+$movies_list = getMoviesBeforeYear2000($movie1);
+$movies_list = getMoviesBeforeYear2000($movie2);
+$movies_list = getMoviesBeforeYear2000($movie3);
+$movies_list = getMoviesBeforeYear2000($movie4);
+
 ?>
 
 
