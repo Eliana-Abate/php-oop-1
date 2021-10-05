@@ -18,16 +18,10 @@ class Movies
         $this->year = $_year;
     }
 
-    public function getMoviesBeforeYear2000($movie)
+    public function getMoviesPeriod($min, $max)
     {
-        $array = [];
-        $movie = new Movies ($title, $genre, $description, $director, $year)
-
-        if ($movie->year >= 1980 && $movie->year <= 1999) {
-
-            return $array[] = $movie;
-
-        }
+     
+        return ($this->year >= $min && $this->year <= $max);
     
     }
 }
@@ -48,10 +42,10 @@ $movie4 = new Movies ('Batman Begins', 'Action, thriller, fantasy', "Batman Begi
 
 
 
-$movies_list = getMoviesBeforeYear2000($movie1);
-$movies_list = getMoviesBeforeYear2000($movie2);
-$movies_list = getMoviesBeforeYear2000($movie3);
-$movies_list = getMoviesBeforeYear2000($movie4);
+$movies_list[] = $movie1;
+$movies_list[] = $movie2;
+$movies_list[] = $movie3;
+$movies_list[] = $movie4;
 
 ?>
 
@@ -71,15 +65,15 @@ $movies_list = getMoviesBeforeYear2000($movie4);
 
     <main>
         <?php foreach ($movies_list as $movie) : ?>
-            
-            <h3><?php echo $movie->title?></h3>
-            <p>Genre: <?php echo $movie->genre?></p>
-            <p>Description: <?php echo $movie->genre?></p>
-            <p>Directed by: <?php echo $movie->director?></p>
-            <p>Year: <?php echo $movie->year?></p>
 
-            <br>
-
+            <?php if (!$movie->getMoviesPeriod(1980, 1999)) continue; ?>
+                 <h3><?php echo $movie->title?></h3>
+                 <p>Genre: <?php echo $movie->genre?></p>
+                 <p>Description: <?php echo $movie->genre?></p>
+                 <p>Directed by: <?php echo $movie->director?></p>
+                 <p>Year: <?php echo $movie->year?></p>
+     
+                 <br>
         <?php endforeach ?>
 
     </main>
